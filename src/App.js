@@ -1,22 +1,22 @@
-import './App.css';
-
-import Navbar from './components/Navbar'
-import Header from './components/Header'
-import ArticleArray from './components/ArticleArray';
-import TutorialArray from './components/TutorialArray';
-
-import Bottom from './components/Bottom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './Login';
+import Signup from './Signup';
+import Home from './Home';
+import './App.css'
 
 function App() {
   return (
-    <>
-    <Navbar title="DEV@Deakin" two="POST" one="LOG IN" place="Search..."/>
-    <Header />
-    <ArticleArray/>
-    <TutorialArray/>
-    <Navbar title="SIGN UP FOR OUR DAILY INSIDER" two="SUBSCRIBE" place="Enter your email" />
-    <Bottom/>
-    </>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
