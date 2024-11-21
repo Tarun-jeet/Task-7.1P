@@ -1,23 +1,22 @@
-
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore"; 
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore'; // Import Firestore
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAJDe3qhBLdo9Ht_9O1w66pKu56qWbdaaM",
-    authDomain: "loginpage-ffb24.firebaseapp.com",
-    projectId: "loginpage-ffb24",
-    storageBucket: "loginpage-ffb24.firebasestorage.app",
-    messagingSenderId: "1069998060396",
-    appId: "1:1069998060396:web:c4bb2131fc3f31970fb949"
+    apiKey: "AIzaSyDbWjHRQ8RuMGkrPePZ7VjZVbsO1siQZOc",
+    authDomain: "revisedlogin.firebaseapp.com",
+    projectId: "revisedlogin",
+    storageBucket: "revisedlogin.firebasestorage.app",
+    messagingSenderId: "197422415204",
+    appId: "1:197422415204:web:2547839667434d3fc84e71"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Auth and Firestore
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-const db = getFirestore(app); 
+const firestore = getFirestore(app); // Initialize Firestore
 
-export { auth, googleProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, db, doc, setDoc, getDoc };
-
-   
-
+export { auth, googleProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, firestore };
